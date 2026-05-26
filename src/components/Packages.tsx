@@ -1,4 +1,5 @@
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Packages() {
   const packages = [
@@ -28,12 +29,24 @@ export default function Packages() {
   return (
     <section id="packages" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <h2 className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-2">Health Packages</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Affordable Preventive Care</h3>
           <p className="text-lg text-slate-600 leading-relaxed">
             Choose from our specially designed health checkup packages to monitor your well-being. Get more tests done at highly discounted prices.
           </p>
+        </div>
+
+        {/* Promotional Flyer */}
+        <div className="max-w-4xl mx-auto mb-16 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <div className="relative w-full aspect-[2/3] md:aspect-[3/4]">
+            <Image 
+              src="/images/promotional-packages.jpg" 
+              alt="Aarogyam Promotional Packages - 50% Off" 
+              fill
+              className="object-contain bg-slate-50"
+            />
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
