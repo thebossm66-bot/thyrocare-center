@@ -78,34 +78,7 @@ function generateOwnerEmail(data: BookingRequest): string {
   `;
 }
 
-function generateConfirmationEmail(data: BookingRequest): string {
-  const testLabel = TEST_LABELS[data.test] || data.test;
 
-  return `
-    <div style="font-family: 'Segoe UI', Tahoma, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 16px; overflow: hidden;">
-      <div style="background: linear-gradient(135deg, #0891b2, #0e7490); padding: 32px; text-align: center;">
-        <h1 style="color: white; margin: 0; font-size: 24px;">✅ Booking Confirmed!</h1>
-        <p style="color: #cffafe; margin: 8px 0 0; font-size: 14px;">Thyrocare Aarogyam Centre Siddipet</p>
-      </div>
-      <div style="padding: 32px;">
-        <p style="color: #475569; font-size: 16px; line-height: 1.6;">Dear <strong>${data.name}</strong>,</p>
-        <p style="color: #475569; font-size: 16px; line-height: 1.6;">Thank you for choosing Thyrocare Aarogyam Centre Siddipet! We have received your booking request for <strong>${testLabel}</strong>.</p>
-        <div style="background: #ecfeff; border-radius: 12px; padding: 20px; margin: 20px 0; border: 1px solid #a5f3fc;">
-          <p style="color: #0e7490; margin: 0; font-weight: 600;">📞 Our team will contact you shortly at ${data.phone} to confirm your appointment details.</p>
-        </div>
-        <div style="background: white; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0;">
-          <h3 style="color: #0e7490; margin: 0 0 12px;">📍 Clinic Location</h3>
-          <p style="color: #475569; margin: 0;">H No 8, 2-67/1/A, Shivaji Nagar,<br/>Siddipet, Telangana 502103</p>
-          <p style="color: #475569; margin: 8px 0 0;">📞 +91 96662 86611</p>
-          <p style="color: #475569; margin: 4px 0 0;">🕐 Mon - Sun: 6:00 AM - 9:00 PM</p>
-        </div>
-      </div>
-      <div style="background: #f1f5f9; padding: 16px; text-align: center; font-size: 12px; color: #94a3b8;">
-        Thank you for trusting Thyrocare Aarogyam Centre Siddipet with your health!
-      </div>
-    </div>
-  `;
-}
 
 export async function POST(request: NextRequest) {
   try {
